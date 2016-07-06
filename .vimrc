@@ -30,6 +30,7 @@ call vundle#end()
 
 filetype plugin indent on
 
+" Universal Settings
 syntax on
 set laststatus=2
 set number
@@ -44,20 +45,20 @@ set autoindent
 set smartindent
 set encoding=utf-8
 set splitright
-
-" Python
 set foldmethod=indent
 set foldlevel=99
+
+" Highlight extra whitespaces as red
+:highlight ExtraWhitespace ctermbg=red guibg=red
+:match ExtraWhitespace /\s\+%/
+
+" Python Exclusive Settings
 au BufNewFile,BufRead *.py
 	\ set tabstop=4 |
 	\ set softtabstop=4 |
 	\ set shiftwidth=4 |
 	\ set expandtab |
 	\ set fileformat=unix |
-
-" Python and C
-:highlight ExtraWhitespace ctermbg=red guibg=red
-:match ExtraWhitespace /\s\+%/
 
 " Typescript and Javascript
 au BufNewFile,BufRead *.ts,*.js,*.jade,*.scss,*.css,*.html
@@ -74,12 +75,6 @@ let python_highlight_all=1
 
 let NERDTreeIgnore=['\.pyc$', '\~$', '__pycache__']
 let g:typescript_indent_disable = 1
-
-" FrontEnd work
-au BufNewFile,BufRead *.js,*.html,*.css,*.jade,*.scss
-	\ set tabstop=2 |
-	\ set softtabstop=2 |
-	\ set shiftwidth=2 |
 
 " Nerdtree configuration
 augroup appearance
