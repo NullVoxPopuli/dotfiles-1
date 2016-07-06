@@ -6,17 +6,17 @@ XPROF_DIR=$HOME/.xprofile
 
 if [ "$1" == "--export" ] || [ "$1" == "-e" ]; then
 	echo "Exporting from git"
-	cp -u ../config $I3_DIR
-	cp -u ../.vimrc $VIM_DIR
-	cp -u ../.xprofile $XPROF_DIR
+	cp ../config $I3_DIR
+	cp ../.vimrc $VIM_DIR
+	cp ../.xprofile $XPROF_DIR
 	exit 1
 fi
 
 if [ "$1" == "--import" ] || [ "$1" == "-i" ]; then
 	echo "Importing from system"
-	cp -u $I3_DIR ../config
-	cp -u $VIM_DIR ../.vimrc
-	cp -u $XPROF_DIR ../.xprofile
+	cp -f $I3_DIR ../config
+	cp -f $VIM_DIR ../.vimrc
+	cp -f $XPROF_DIR ../.xprofile
 	exit 1
 fi
 
