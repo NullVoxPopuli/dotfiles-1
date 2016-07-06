@@ -4,8 +4,8 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+" General 
 Plugin 'scrooloose/nerdtree' 
-Plugin 'jnurmine/Zenburn'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
@@ -19,6 +19,12 @@ Plugin 'vim-scripts/indentpython.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/syntastic'
 Plugin 'nvie/vim-flake8'
+
+" Typescript
+Plugin 'leafgarland/typescript-vim'
+
+" Jade/Pug
+Plugin 'digitaltoad/vim-pug'
 
 call vundle#end()
 
@@ -53,6 +59,12 @@ au BufNewFile,BufRead *.py
 :highlight ExtraWhitespace ctermbg=red guibg=red
 :match ExtraWhitespace /\s\+%/
 
+" Typescript and Javascript
+au BufNewFile,BufRead *.ts,*.js,*.jade,*.scss,*.css,*.html
+	\ set tabstop=2 |
+	\ set softtabstop=2 |
+	\ set shiftwidth=2 |
+
 " YouCompleteMe Space+G go-to-definition
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
@@ -60,7 +72,8 @@ map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 " Python Highlighting
 let python_highlight_all=1
 
-let NERDTreeIgnore=['\.pyc$', '\~$']
+let NERDTreeIgnore=['\.pyc$', '\~$', '__pycache__']
+let g:typescript_indent_disable = 1
 
 " FrontEnd work
 au BufNewFile,BufRead *.js,*.html,*.css,*.jade,*.scss
