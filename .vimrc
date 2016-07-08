@@ -33,14 +33,12 @@ filetype plugin indent on
 " Universal Settings
 syntax on
 set laststatus=2
-set number
-set t_Co=256
-let g:solarized_termcolors=256
-set background=dark
-colorscheme solarized 
-set ruler
-set tabstop=4
-set shiftwidth=4
+set number						" Enables Line numbers
+set t_Co=256					" 256 Terminal Colors
+let g:solarized_termcolors=256  " Force solarized to use 256 colors
+set background=dark				" Dark mode
+colorscheme solarized 			" Use solarized font
+set ruler						
 set autoindent
 set smartindent
 set encoding=utf-8
@@ -82,11 +80,11 @@ augroup appearance
 	let g:nerdtree_tabs_open_on_console_startup=1
 	:map <Leader>n <plug>NERDTreeTabsToggle<CR>
 	:map <S-F5> :vertical resize +10<CR>
-	:map <F5> :vertical resize +5<CR>
+	:map <F5> :vertical resize +2<CR>
 	:map <S-F6> :resize -10<CR>
-	:map <F6> :resize -5<CR>
+	:map <F6> :resize -2<CR>
 	:map <S-F7> :resize +10<CR>
-	:map <F7> :resize +5<CR>
+	:map <F7> :resize +2<CR>
 	:map <S-F8> :vertical resize -10<CR>
-	:map <F8> :vertical resize -5<CR>
+	:map <F8> :vertical resize -2<CR>
 augroup END
