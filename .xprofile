@@ -4,3 +4,7 @@ xrandr --output Virtual1 --mode 1920x1080
 
 feh --bg-scale ~/Pictures/Backgrounds/Cf2caNf.jpg
 vmware-user-suid-wrapper
+
+# Remove Mouse acceleration
+xinput --set-prop 10 'Device Accel Constant Deceleration' 2.4
+xrandr --output DVI-D-0 --lef-of DVI-I-1
